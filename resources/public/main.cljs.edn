@@ -1,0 +1,3 @@
+{:require  [vdca.core]
+ :init-fns []
+ :compiler-options {}}
