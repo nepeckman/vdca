@@ -38,8 +38,8 @@
                         (doseq [i (range 0 (max new-length old-length))]
                           (update-element! 
                             (aget (.-childNodes parent) index)
-                            ((:children new-node) i)
-                            ((:children old-node) i)
+                            (get (:children new-node) i)
+                            (get (:children old-node) i)
                             i))))))
      
 (defn init []
@@ -50,5 +50,5 @@
     (update-element! root component)
     (.addEventListener reload "click" #(update-element! root component2 component))))
 
-(set! (.-onload js/window) init)
+(init)
 
